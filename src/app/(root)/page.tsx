@@ -19,8 +19,10 @@ export default function Page() {
                         <HomeIconPage />
                     </div>
                 </div>
-                <div className="mx-auto w-full my-24">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 mr-3 ml-3 gap-1 mt-5">
+                <div className="mx-auto w-full mt-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2">
+                        <Card />
+                        <Card />
                         <Card />
                     </div>
                 </div>

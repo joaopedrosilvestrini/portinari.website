@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/navbar'
+import NextAuthSessionProvider from '@/providers/NextAuth'
+import UIProvider from '@/providers/NextUi'
 
 const mont = Montserrat({
   weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
     default: 'portinari',
     template: '%s | portinari'
   },
-  description: 'Site feito pelos alunos do 9 ano, para ajudar a classe :)',
+  description: 'Site feito pelos alunos, para ajudar a classe :)',
   icons: {
     other: [
       {
@@ -58,7 +61,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className='dark' suppressHydrationWarning>
-      <body className={mont.className}>{children}</body>
+      <body className={mont.className}>
+        <NextAuthSessionProvider>
+          <UIProvider>
+            <nav className="flex fixed mt-4 ml-4">
+              <Navbar />
+            </nav>
+            <main className="min-h-[67vh]">
+              {children}
+            </main>
+          </UIProvider>
+        </NextAuthSessionProvider>
+      </body>
     </html>
   )
 }

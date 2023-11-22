@@ -21,15 +21,19 @@ export default function Navbar() {
                 <DropdownMenu variant="faded" aria-label="Static Actions">
                     <DropdownSection title="Ações" showDivider>
                         <DropdownItem
+                            href="/"
                             key="home"
                             shortcut="H"
-                        >Ínicio</DropdownItem>
-                        <DropdownItem key="rules" shortcut="R">Regras</DropdownItem>
-                        <DropdownItem key="team" shortcut="T">Time</DropdownItem>
+                        >
+                            Ínicio
+                        </DropdownItem>
+                        <DropdownItem key="rules" shortcut="R" href="/rules">Regras</DropdownItem>
+                        <DropdownItem key="team" shortcut="T" href="/team">Time</DropdownItem>
                     </DropdownSection>
                     <DropdownSection title="Conta">
                         <DropdownItem
                             key="login"
+                            href="/login"
                             startContent={<EnterIcon />}
                         >Entrar</DropdownItem>
                     </DropdownSection>
