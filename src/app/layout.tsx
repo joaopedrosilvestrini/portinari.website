@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: 'portinari',
     template: '%s | portinari'
   },
-  description: 'Site feito pelos alunos do 9 ano, para ajudar a classe :)',
+  description: 'Site feito pelos alunos, para ajudar a classe :)',
   icons: {
     other: [
       {
