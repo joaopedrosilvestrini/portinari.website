@@ -9,11 +9,12 @@ const mont = Montserrat({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: {
     default: 'portinari',
     template: '%s | portinari'
   },
-  description: 'Site feito pelos alunos do 8 ano, para ajudar a classe :)',
+  description: 'Site feito pelos alunos do 9 ano, para ajudar a classe :)',
   icons: {
     other: [
       {
