@@ -13,7 +13,7 @@ const mont = Montserrat({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portinari-ten.vercel.app'),
+  metadataBase: new URL('https://portinari-five.vercel.app'),
   title: {
     default: 'portinari',
     template: '%s | portinari'
