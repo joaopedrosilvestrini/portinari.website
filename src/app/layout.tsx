@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'portinari',
     locale: 'en_US',
-    description: 'Site feito pelos alunos do 8 ano, para ajudar a classe :)'
+    description: 'Site feito pelos alunos, para ajudar a classe :)'
   },
   twitter: {
     card: 'summary_large_image',
     creator: '@joao.silvexz',
     title: 'portinari',
-    description: 'Site feito pelos alunos do 8 ano, para ajudar a classe :)'
+    description: 'Site feito pelos alunos, para ajudar a classe :)'
   },
   other: {
     'msapplication-TileColor': '#18181b',
