@@ -1,5 +1,4 @@
 import Card from "@/components/card";
-import HomeIconPage from "@/icons/StartPage";
 import Cat from "@/icons/StartPage2";
 import { Image } from "@nextui-org/react";
 
