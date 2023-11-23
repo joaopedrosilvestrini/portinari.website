@@ -4,7 +4,7 @@ mongoose.connect(process.env.MONGO_DB || '')
 mongoose.Promise = global.Promise
 
 const TarefaSchema = new Schema({
-  _id: String,
+  _id: Number,
   name: String,
   description: String,
   tag: String,
@@ -12,5 +12,5 @@ const TarefaSchema = new Schema({
 })
 
 const Tarefas =
-  mongoose.models.servers || mongoose.model('tarefas', TarefaSchema)
+  mongoose.models.tarefas || mongoose.model('tarefas', TarefaSchema)
 export default Tarefas

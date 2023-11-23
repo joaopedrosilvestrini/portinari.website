@@ -1,5 +1,6 @@
 import Card from "@/components/card";
 import HomeIconPage from "@/icons/StartPage";
+import Cat from "@/icons/StartPage2";
 import { Image } from "@nextui-org/react";
 
 export default function Page() {
@@ -16,15 +17,11 @@ export default function Page() {
                         </p>
                     </div>
                     <div className="hidden lg:flex w-96 h-96 -mt-12">
-                        <HomeIconPage />
+                        <Cat />
                     </div>
                 </div>
                 <div className="mx-auto w-full mt-12">
-                    <div className="grid grid-cols-1 lg:grid-cols-2">
-                        <Card />
-                        <Card />
-                        <Card />
-                    </div>
+                    <Card />
                 </div>
             </div>
         </section>

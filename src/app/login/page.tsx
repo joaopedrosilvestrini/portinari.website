@@ -7,29 +7,45 @@ import { Button, Chip, Input } from "@nextui-org/react";
 import { signIn } from 'next-auth/react';
 import { SyntheticEvent, useMemo, useState } from "react";
 import Users from "../(models)/User";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
-    const [email, setEmail] = useState<string>("")
+    const [credentials, setCredentials] = useState<{ email: string, password: string }>({ email: '', password: '' })
     const [error, setError] = useState<string>("")
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(false);
-    const [password, setPassword] = useState<string>("")
     const validateEmail = (value: string) => value.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi);
     const toggleVisibility = () => setIsVisible(!isVisible);
+    const router = useRouter()
 
     const isInvalid = useMemo(() => {
-        if (email === "") return false;
+        if (credentials.email === "") return false;
 
-        return validateEmail(email) ? false : true
-    }, [email]);
+        return validateEmail(credentials.email) ? false : true
+    }, [credentials.email]);
 
     const handleSubmit = async (e: SyntheticEvent) => {
-        console.log('a')
         e.preventDefault();
 
-        if (!email || !password) return setError('Email ou senha não inseridos')
+        const user = {
+            id: '1',
+            email: 'admin@admin.com',
+            password: 'admin'
+        }
+
+        if (!credentials.email || !credentials.password) return setError('Email ou senha não inseridos')
+        if(credentials.email !== user.email && credentials.password !== user.password) return setError('Email ou senha incorretos!')
 
         setLoading(true)
+
+        await signIn('credentials', {
+            email: credentials.email,
+            password: credentials.password
+        }).then(() => {
+            setLoading(false)
+            setError('')
+            router.replace('/')
+        })
     }
 
     return (
@@ -56,14 +72,14 @@ export default function Login() {
                                         <Input
                                             isRequired
                                             isDisabled={loading}
-                                            value={email}
+                                            value={credentials.email}
                                             type="email"
                                             label="Email"
                                             placeholder="meuemail@exemplo.com"
                                             isInvalid={isInvalid}
                                             color={isInvalid ? "danger" : "default"}
                                             labelPlacement="outside"
-                                            onValueChange={setEmail}
+                                            onValueChange={(e) => setCredentials({ email: e, password: credentials.password })}
                                             startContent={
                                                 <MailIcon />
                                             }
@@ -73,12 +89,12 @@ export default function Login() {
                                         <Input
                                             isRequired
                                             isDisabled={loading}
-                                            value={password}
+                                            value={credentials.password}
                                             type="password"
                                             label="Senha"
                                             labelPlacement="outside"
                                             placeholder="********"
-                                            onValueChange={setPassword}
+                                            onValueChange={(e) => setCredentials({ email: credentials.email, password: e })}
                                             endContent={
                                                 <button type="button" onClick={toggleVisibility}>
                                                     {isVisible ? (

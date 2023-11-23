@@ -14,5 +14,5 @@ const UserSchema = new Schema({
 })
 
 const Users =
-  mongoose.models.servers || mongoose.model('users', UserSchema)
+  mongoose.models.users || mongoose.model('users', UserSchema)
 export default Users

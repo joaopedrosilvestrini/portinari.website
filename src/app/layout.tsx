@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/navbar'
 import NextAuthSessionProvider from '@/providers/NextAuth'
 import UIProvider from '@/providers/NextUi'
+import Footer from '@/components/footer'
 
 const mont = Montserrat({
   weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
@@ -70,6 +71,9 @@ export default function RootLayout({
             <main className="min-h-[67vh]">
               {children}
             </main>
+            <footer>
+              <Footer />
+            </footer>
           </UIProvider>
         </NextAuthSessionProvider>
       </body>

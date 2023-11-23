@@ -15,8 +15,6 @@ const nextAuthOptions: NextAuthOptions = {
                     id: '1',
                     email: 'admin@admin.com',
                     password: 'admin',
-                    name: 'Administrador',
-                    role: 'admin'
                 }
 
                 const isValidEmail = user.email === credentials?.email
