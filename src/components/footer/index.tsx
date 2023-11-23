@@ -13,7 +13,7 @@ export default function Footer() {
             <div className="w-full flex justify-center px-10 lg:px-12">
                 <footer className="max-w-7xl w-full px-6 pt-24">
                     <Divider />
-                    <footer className="rounded-lg md:py-8">
+                    <footer className="rounded-lg md:py-8 mt4 lg:mt-6">
                         <div className="sm:flex sm:items-center sm:justify-between">
                             <Link href="/">
                                 <div className="cursor-pointer col-span-2 flex items-center mr-6">
