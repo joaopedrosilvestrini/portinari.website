@@ -7,7 +7,7 @@ export default function Page() {
         <section className='flex col items-center justify-center px-10 3xl:px-0'>
             <div className='max-w-7xl w-full'>
                 <div className="w-full flex items-center justify-between gap-36 py-24">
-                    <div className="lg:max-w-2xl w-full text-center lg:text-start ml-10">
+                    <div className="lg:max-w-2xl w-full text-center lg:text-start ml-1 lg:ml-10">
                         <h1 className="relative text-white text-4xl lg:text-6xl pb-2 leading-20 font-bold">
                             Facilitando os seus estudos
                         </h1>
